@@ -2,6 +2,8 @@
 
 Implements the wallet-side of the [lnurl spec](https://github.com/btcontract/lnurl-rfc/blob/master/spec.md), for interacting with lnurl-enabled services.
 
+Original work by [fiatjaf](https://github.com/fiatjaf/lightningd-gjson-rpc/tree/x1/cmd/lnurl).
+
 Provides two RPC commands:
 
  * `lnurlparams`, which prints all the parameters related to an `lnurl` (either taken from the querystring or fetched from the server).
