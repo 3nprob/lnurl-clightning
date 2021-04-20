@@ -113,7 +113,7 @@ func main() {
 				"Will fetch the params from the server or (when the decoded URL has a 'login' querystring) get then from the querystring, then return these params as JSON. {lnurl} is the bech32-encoded URL to query.",
 				"",
 				func(p *plugin.Plugin, params plugin.Params) (resp interface{}, errCode int, err error) {
-					data, err := lnurl.HandleLNURL(params["lnurl"].(string))
+					_, data, err := lnurl.HandleLNURL(params["lnurl"].(string))
 					if err != nil {
 						return nil, 401, err
 					}
@@ -126,7 +126,7 @@ func main() {
 				"Will decode the lnurl, get its params (as in 'lnurlparams') and proceed with the lnurl flow according to the tag (login, withdraw etc.). {lnurl} is the bech32-encoded URL to query. {private} is either true or false, used on lnurl-channel for the type of channel (defaults to false). {description} is used on lnurl-withdraw (defaults to the default description). {msatoshi} is an integer, used on lnurl-withdraw and lnurl-pay (defaults to maximum possible amount).",
 				"",
 				func(p *plugin.Plugin, params plugin.Params) (resp interface{}, errCode int, err error) {
-					data, err := lnurl.HandleLNURL(params["lnurl"].(string))
+					_, data, err := lnurl.HandleLNURL(params["lnurl"].(string))
 					if err != nil {
 						return nil, 401, err
 					}
